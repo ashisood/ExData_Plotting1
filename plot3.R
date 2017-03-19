@@ -9,6 +9,7 @@ sub_metering_2 <- as.numeric(subSetmydfData$Sub_metering_2)
 sub_metering_3 <- as.numeric(subSetmydfData$Sub_metering_3)
 
 png("plot3.png", width=480, height=480)
+datetime<- strptime(paste(subSetmydfData$Date,subSetmydfData$Time), format = "%d/%m/%Y %H:%M:%S")
 plot(datetime, sub_metering_1, ylab="Energy Submetering", xlab="", type = "n")
 lines(datetime, sub_metering_1, type = "l", col = "black")
 lines(datetime, sub_metering_2, type="l", col="red")
